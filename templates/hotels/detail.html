@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ hotel.name }}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+    </style>
+
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+
+<!-- HERO SECTION -->
+
+<section class="relative h-[80vh]">
+
+    <img
+        src="{{ hotel.image.url }}"
+        class="absolute inset-0 w-full h-full object-cover"
+    >
+
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <!-- NAVBAR -->
+
+    <nav class="absolute top-0 left-0 w-full z-50">
+
+        <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+
+            <a
+                href="/"
+                class="text-3xl font-black text-yellow-400"
+            >
+                LuxeStay
+            </a>
+
+            <a
+                href="/"
+                class="border border-white/20 px-6 py-3 rounded-2xl hover:border-yellow-400 transition"
+            >
+                Back To Home
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- HERO CONTENT -->
+
+    <div class="relative z-10 h-full flex items-center justify-center text-center px-6">
+
+        <div>
+
+            <p class="uppercase tracking-[0.4em] text-yellow-400 text-sm mb-6">
+
+                Luxury Experience
+
+            </p>
+
+            <h1 class="text-6xl md:text-8xl font-black mb-8">
+
+                {{ hotel.name }}
+
+            </h1>
+
+            <p class="text-2xl text-gray-300 mb-8">
+
+                📍 {{ hotel.location }}
+
+            </p>
+
+            <div class="flex items-center justify-center gap-4">
+
+                <span class="bg-yellow-400 text-black px-6 py-3 rounded-full font-bold text-lg">
+
+                    ⭐ {{ hotel.rating }}
+
+                </span>
+
+                <span class="bg-white/10 backdrop-blur-xl px-6 py-3 rounded-full font-semibold text-lg">
+
+                    ${{ hotel.price_per_night }} / night
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DETAILS -->
+
+<section class="py-28 bg-zinc-950">
+
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+
+        <!-- LEFT -->
+
+        <div>
+
+            <p class="uppercase tracking-[0.3em] text-yellow-400 text-sm mb-4">
+
+                Premium Stay
+
+            </p>
+
+            <h2 class="text-5xl font-black leading-tight mb-8">
+
+                World-Class
+                Luxury Experience
+
+            </h2>
+
+            <p class="text-gray-400 text-xl leading-relaxed mb-10">
+
+                {{ hotel.description }}
+
+            </p>
+
+            <div class="grid grid-cols-2 gap-6 mb-12">
+
+                <div class="bg-zinc-900 p-6 rounded-3xl border border-white/10">
+
+                    <h3 class="text-yellow-400 text-4xl font-black mb-2">
+
+                        24/7
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Concierge Service
+
+                    </p>
+
+                </div>
+
+                <div class="bg-zinc-900 p-6 rounded-3xl border border-white/10">
+
+                    <h3 class="text-yellow-400 text-4xl font-black mb-2">
+
+                        5★
+
+                    </h3>
+
+                    <p class="text-gray-400">
+
+                        Premium Hospitality
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a
+                href="/bookings/create/{{ hotel.id }}/"
+                class="inline-block bg-yellow-400 text-black px-10 py-5 rounded-2xl font-bold text-lg hover:bg-yellow-300 transition shadow-2xl shadow-yellow-400/20"
+            >
+
+                Book This Hotel
+
+            </a>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div>
+
+            <img
+                src="{{ hotel.image.url }}"
+                class="rounded-[40px] shadow-2xl"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- AMENITIES -->
+
+<section class="py-24 bg-black">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+
+            <p class="uppercase tracking-[0.3em] text-yellow-400 text-sm mb-4">
+
+                Included Amenities
+
+            </p>
+
+            <h2 class="text-5xl font-black">
+
+                Designed For Comfort
+
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+
+            <div class="bg-zinc-900 p-10 rounded-[32px] border border-white/10 text-center">
+
+                <div class="text-5xl mb-6">
+                    🏊
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">
+
+                    Infinity Pool
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Stunning rooftop luxury pool access.
+
+                </p>
+
+            </div>
+
+            <div class="bg-zinc-900 p-10 rounded-[32px] border border-white/10 text-center">
+
+                <div class="text-5xl mb-6">
+                    🍽️
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">
+
+                    Fine Dining
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    World-class chefs and gourmet cuisine.
+
+                </p>
+
+            </div>
+
+            <div class="bg-zinc-900 p-10 rounded-[32px] border border-white/10 text-center">
+
+                <div class="text-5xl mb-6">
+                    🏖️
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">
+
+                    Private Beach
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Exclusive beachfront luxury experience.
+
+                </p>
+
+            </div>
+
+            <div class="bg-zinc-900 p-10 rounded-[32px] border border-white/10 text-center">
+
+                <div class="text-5xl mb-6">
+                    🧘
+                </div>
+
+                <h3 class="text-2xl font-bold mb-4">
+
+                    Spa & Wellness
+
+                </h3>
+
+                <p class="text-gray-400">
+
+                    Relaxing premium wellness sessions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="border-t border-white/10 bg-zinc-950 py-10">
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+
+        <h2 class="text-3xl font-black text-yellow-400">
+            LuxeStay
+        </h2>
+
+        <p class="text-gray-500">
+            © 2026 LuxeStay. Crafted for luxury experiences.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

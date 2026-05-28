@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+
+<head>
+
+    <meta charset=\"UTF-8\">
+
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+
+    <title>Book Hotel</title>
+
+    <script src=\"https://cdn.tailwindcss.com\"></script>
+
+</head>
+
+<body class=\"bg-black text-white min-h-screen flex items-center justify-center px-6\">
+
+<div class=\"max-w-2xl w-full bg-zinc-900 p-12 rounded-[40px] border border-white/10\">
+
+    <h1 class=\"text-5xl font-black mb-4 text-yellow-400\">
+
+        Book {{ hotel.name }}
+
+    </h1>
+
+    <p class=\"text-gray-400 mb-10\">
+
+        Fill booking details below
+
+    </p>
+
+    <form method=\"POST\" class=\"space-y-6\">
+
+        {% csrf_token %}
+
+        <div>
+
+            <label class=\"block mb-2 text-sm text-gray-400\">
+                Full Name
+            </label>
+
+            {{ form.full_name }}
+
+        </div>
+
+        <div>
+
+            <label class=\"block mb-2 text-sm text-gray-400\">
+                Email
+            </label>
+
+            {{ form.email }}
+
+        </div>
+
+        <div>
+
+            <label class=\"block mb-2 text-sm text-gray-400\">
+                Phone
+            </label>
+
+            {{ form.phone }}
+
+        </div>
+
+        <div class=\"grid md:grid-cols-2 gap-6\">
+
+            <div>
+
+                <label class=\"block mb-2 text-sm text-gray-400\">
+                    Check In
+                </label>
+
+                {{ form.check_in }}
+
+            </div>
+
+            <div>
+
+                <label class=\"block mb-2 text-sm text-gray-400\">
+                    Check Out
+                </label>
+
+                {{ form.check_out }}
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <label class=\"block mb-2 text-sm text-gray-400\">
+                Guests
+            </label>
+
+            {{ form.guests }}
+
+        </div>
+
+        <button
+            type=\"submit\"
+            class=\"w-full bg-yellow-400 text-black py-5 rounded-2xl font-black text-lg hover:bg-yellow-300 transition\"
+        >
+
+            Confirm Booking
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
